@@ -14,7 +14,7 @@
  - 1.5.[捕获错误](1.5.md)
  - 1.6.[日志syslog](1.6.md)
  - 1.7.[Makefile](1.7.md)
- - 1.8.[结束程序abort、exit、atexit、_Exit、quick_exit、at_quikck_exit](1.8.md)
+ - 1.8.[结束程序abort exit atexit _Exit quick_exit at_quikck_exit](1.8.md)
 * 底层文件访问
  - 2.0.[底层文件访问](2.0.md)
  - 2.1.[write 系统调用](2.1.md)
@@ -26,6 +26,7 @@
  - 2.7.[标准I/O库](2.7.md)
  - 2.8.[二进制文件的输入、输出](2.8.md)
  - 2.9.[fcntl文件锁函数](2.9.md)
+ - 2.10.[dup dup2函数](2.10.md)
 * C 基础入门
  - 3.1.[输入、输出函数](3.1.md)
  - 3.2.[变量](3.2.md)
