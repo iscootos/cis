@@ -7,6 +7,8 @@
  - 0.5.[find命令](0.5.md)
  - 0.6.[grep命令](0.6.md)
  - 0.7.[压缩解压命令](0.7.md)
+ - 0.8.[mknod创建特殊文件、设备](0.8.md)
+ - 0.9.[在重启 iptables 时，我遇到如下报错security raw nat mangle](0.9.md)
 * 1.LAMP环境的搭建
  - 1.1.[CentOS 6.4 LAMP环境](1.1.md)
  - 1.2.[LAMP](1.2.md)
