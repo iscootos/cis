@@ -40,7 +40,8 @@
  - 15.2.[WNDCLASS结构类型](15.2.md)
  - 15.3.[Socket通信](15.3.md)
  - 15.4.[Windows消息和消息队列](15.4.md)
- - 15.5.[自定义Windows程序图标](15.5.md)
+ - 15.5.[自定义Windows程序图标,光标](15.5.md)
+ - 15.6.[HBRUSH画刷](15.6.md)
 * 连接MySQL数据库
  - x.0.[boost库](x.0.md)
  - x.1.[MySQL Connector/C](x.1.md)
