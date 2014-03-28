@@ -34,6 +34,7 @@
  - 11.2.[MFC快速入门](11.2.md)
  - 11.3.[MFC 写的一个简单的登陆界面](11.3.md)
  - 11.5.[MFC socket编程](11.5.md)
+ - 11.6.[基类、派生类](11.6.md)
 * Windows编程
  - 15.0.[第一个Windows程序、WinMain、MessageBox](15.0.md)
  - 15.1.[Windows数据类型](15.1.md)
