@@ -64,6 +64,10 @@
  - 15.6.[HBRUSH画刷](15.6.md)
  - 15.7.[LoadString](15.7.md)
  - 15.8.[](15.8.md)
+* MFC编程
+ - 16.0.[CWinApp类](16.0.md)
+ - 16.1.[CFrameWnd类](16.1.md)
+ - 16.5.[MFC消息](16.5.md)
 * 连接MySQL数据库
  - x.0.[boost库](x.0.md)
  - x.1.[MySQL Connector/C](x.1.md)
