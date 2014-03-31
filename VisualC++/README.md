@@ -68,6 +68,7 @@
  - 16.0.[CWinApp类](16.0.md)
  - 16.1.[CFrameWnd类](16.1.md)
  - 16.5.[MFC消息](16.5.md)
+ - 16.10.[MFC 窗口垂直水平居中显示](16.10.md)
 * 连接MySQL数据库
  - x.0.[boost库](x.0.md)
  - x.1.[MySQL Connector/C](x.1.md)
