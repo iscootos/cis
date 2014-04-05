@@ -55,6 +55,7 @@
  - 11.23.[友元类](11.23.md)
  - 11.24.[虚函数](11.24.md)
  - 11.25.[抽象类与纯虚函数](11.25.md)
+ - 11.26.[创建类的对象的4种方式](11.26.md)
 * Windows编程
  - 15.0.[第一个Windows程序、WinMain、MessageBox](15.0.md)
  - 15.1.[Windows数据类型](15.1.md)
@@ -64,7 +65,6 @@
  - 15.5.[自定义Windows程序图标,光标](15.5.md)
  - 15.6.[HBRUSH画刷](15.6.md)
  - 15.7.[LoadString](15.7.md)
- - 15.8.[](15.8.md)
 * MFC编程
  - 16.0.[CWinApp类](16.0.md)
  - 16.1.[CFrameWnd类](16.1.md)
@@ -78,3 +78,4 @@
  - x.1.[MySQL Connector/C](x.1.md)
  - x.2.[MySQL Connector/C++](x.2.md)
  - x.3.[编译zlib库和libpng库](x.3.md)
+ - x.4.[改写一个MFC程序实例](x.4.md)
