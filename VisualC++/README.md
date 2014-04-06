@@ -79,3 +79,4 @@
  - x.2.[MySQL Connector/C++](x.2.md)
  - x.3.[编译zlib库和libpng库](x.3.md)
  - x.4.[改写一个MFC程序实例](x.4.md)
+ - x.5.[defined宏](x.5.md)
