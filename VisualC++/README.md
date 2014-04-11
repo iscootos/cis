@@ -80,3 +80,5 @@
  - x.3.[编译zlib库和libpng库](x.3.md)
  - x.4.[改写一个MFC程序实例](x.4.md)
  - x.5.[defined宏](x.5.md)
+ - x.6.[加载VS资源中PNG图片](x.6.md)
+ - x.7.[位图信息头结构](x.7.md)
