@@ -1,4 +1,16 @@
 #加载VS资源中PNG图片
+#####AfxGetResourceHandle()
+AfxGetResourceHandle函数返回当前活动进程的资源文件的HINSTANCE          
+头文件`afxwin.h`
+```cpp
+extern HINSTANCE AfxGetResourceHandle( );
+```
+一般作为FindResource()函数的参数使用                    
+例如:
+```cpp
+FindResource(AfxGetResourceHandle(), MKAEINTRESOURCE(IDB_PNG1), L"PNG");
+```
+
 1. 我们在资源文件中添加了一个PNG图片，名称IDB_PNG1, 放在了系统自动创建的PNG类下面                 
 2. 我们使用FindResource找到这个图片
 ```cpp
