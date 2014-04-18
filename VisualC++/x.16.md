@@ -27,8 +27,8 @@ CDC所有类都包含一个成员变量: m_nHdc,即DC句柄
 ###CMetaFileDC
 与元文件相关的设备描述表关联
 ####下面说下一些细点的知识点
-1.CClientDC,CWindowDC 区别不大, 可以说 CWindowDC包含了CClientDC。 就拿记事本来说，CClientDC 就只是我们可以编辑文字的那个区域，是客户区，CWindowDC 除了上面说的区域, 还包括菜单栏和工具栏等
-2.CClientDC和CWindowDC与 CPaintDC 的区别大点，在DC的获取方面 CClientDC和CWindowDC 使用的是并只能是GetDC 和 ReleaseDC。CPaintDC 使用的是并只能是 BeginPaint 和 EndPaint
+1.CClientDC,CWindowDC 区别不大, 可以说 CWindowDC包含了CClientDC。 就拿记事本来说，CClientDC 就只是我们可以编辑文字的那个区域，是客户区，CWindowDC 除了上面说的区域, 还包括菜单栏和工具栏等                                         
+2.CClientDC和CWindowDC与 CPaintDC 的区别大点，在DC的获取方面 CClientDC和CWindowDC 使用的是并只能是GetDC 和 ReleaseDC。CPaintDC 使用的是并只能是 BeginPaint 和 EndPaint                                    
 3.CPaintDC只能用在响应 WM_PAINT 事件CClientDC,CWindowDC 只能用在响应非WM_PAINT 事件
 ###关于 WM_PAINT事件
  系统会在多个不同的时机发送WM_PAINT消息：当第一次创建一个窗口时，当改变窗口的大小时，当把窗口从另一个窗口背后移出时，当最大化或最小化窗口时，等等，这些动作都是由系统管理的，应用只是被动地接收该消息，在消息处理函数中进行绘制操作；大多数的时候应用也需要能够主动引发窗口中的绘制操作，比如当窗口显示的数据改变的时候，这一般是通过InvalidateRect和InvalidateRgn函数来完成的。InvalidateRect和 InvalidateRgn把指定的区域加到窗口的Update Region中，当应用的消息队列没有其他消息时，如果窗口的Update Region不为空时，系统就会自动产生WM_PAINT消息             
