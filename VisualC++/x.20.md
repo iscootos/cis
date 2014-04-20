@@ -1,4 +1,5 @@
 #静态文本框控件
+STATICK控件          
 静态文本框控件可以接收文字，和图片          
 ####style风格
 在使用`CreateWindow`和`CreateWindowEx`函数的时候          
