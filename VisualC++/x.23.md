@@ -229,7 +229,93 @@ lParam 不使用
 设置按钮样式，总返回0        
 wParam 按钮样式的值,或多个     
 lParam BOOL值，TRUE重绘按钮，FALSE不重绘         
-       
+
+
+###经常使用的一些函数、消息、通知          
+####BN_CLICKED
+当用户点击一个按钮发送该通知代码，父窗口用WM_COMMAND消息接收该代码             
+wParam LOWORD控件标识符，HIWORD通知代码           
+lParam 按钮句柄           
+
+####WM_LBUTTONDOWN
+按下鼠标左键，通过WindowProc函数接收该消息            
+```cpp
+#define WM_LBUTTONDOWN                  0x0201
+```
+wParam 表示是否有按键按下          
+```text
+常量值        十六进制      说明
+MK_CONTROL    0x0008        CTRL
+MK_LBUTTON    0x0001        鼠标左键       
+MK_MBUTTON    0x0010        鼠标中键
+MK_RBUTTON    0x0002        鼠标右键
+MK_SHIFT      0x0004        SHIFT
+MK_XBUTTON1   0x0020        第1个X按钮
+MK_XBUTTON2   0x0040        第2个X按钮
+```
+
+lParam GET_X_LPARAM(LPARAM)左上角X坐标，GET_Y_LPARAM(LPARAM)左上角Y坐标                    
+
+需要包含`windowsx.h`头文件，GET_X_LPARAM、GET_Y_LPARAM返回int类型             
+
+如果程序处理此消息，返回零     
+
+####WM_LBUTTONUP
+放开鼠标左键，通过WindowProc函数接收           
+```cpp
+#define WM_LBUTTONUP                    0x0202
+```
+wParam 表示是否有按键按下          
+```text
+常量值        十六进制      说明
+MK_CONTROL    0x0008        CTRL
+MK_LBUTTON    0x0001        鼠标左键       
+MK_MBUTTON    0x0010        鼠标中键
+MK_RBUTTON    0x0002        鼠标右键
+MK_SHIFT      0x0004        SHIFT
+MK_XBUTTON1   0x0020        第1个X按钮
+MK_XBUTTON2   0x0040        第2个X按钮
+```
+lParam GET_X_LPARAM(LPARAM)左上角X坐标，GET_Y_LPARAM(LPARAM)左上角Y坐标  
+
+如果程序处理此消息，返回零 
+
+####WM_MOUSEMOVE
+在鼠标移动时，发送已捕获焦点的窗口，WindowProc函数接收           
+```cpp
+#define WM_MOUSEMOVE                    0x0200
+```
+wParam 表示是否有按键按下          
+```text
+常量值        十六进制      说明
+MK_CONTROL    0x0008        CTRL
+MK_LBUTTON    0x0001        鼠标左键       
+MK_MBUTTON    0x0010        鼠标中键
+MK_RBUTTON    0x0002        鼠标右键
+MK_SHIFT      0x0004        SHIFT
+MK_XBUTTON1   0x0020        第1个X按钮
+MK_XBUTTON2   0x0040        第2个X按钮
+```
+lParam GET_X_LPARAM(LPARAM)左上角X坐标，GET_Y_LPARAM(LPARAM)左上角Y坐标  
+
+如果程序处理此消息，返回零 
+
+####WM_SETFOCUS
+发送一个消息给窗口，告诉它已经获得键盘焦点               
+```cpp
+#define WM_SETFOCUS                     0x0007
+```
+wParam 已经失去键盘焦点的窗口句柄，值可以为NULL           
+lParam 不使用           
+
+如果程序处理此消息，返回零
+```cpp
+HWND xsi = CreateWindow(_T("COMBOBOX"), _T(""), CBS_DROPDOWN | WS_GROUP | WS_TABSTOP | WS_CHILD | WS_VISIBLE, 110, 175, 168, 26, hWnd, (HMENU) 2001, hInst, NULL);
+SendMessage(xsi, WM_SETFOCUS, NULL, NULL);
+```
+
+
+
 
 
 
