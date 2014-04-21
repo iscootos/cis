@@ -237,6 +237,33 @@ lParam BOOL值，TRUE重绘按钮，FALSE不重绘
 wParam LOWORD控件标识符，HIWORD通知代码           
 lParam 按钮句柄           
 
+现在我们来点击一个按钮，弹出一个对话框
+```cpp
+#define XS_LOGIN  2001;
+HWND IS_LOGIN;
+
+IS_LOGIN = CreateWindow(_T("BUTTON"), _T(""), BS_BITMAP | WS_VISIBLE | WS_CHILD, 0,0,100,100,hWnd, (HMENU) XS_LOGIN, hInst, NULL);
+
+HBITMAP SP = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_BITMAP1));
+
+SendMessage(IS_LOGIN, BM_SETIMAGE, IMAGE_BITMAP, (LPARAM)SP);
+
+/* 消息 */
+switch(message)
+{
+case WM_COMMAND:
+	wmId = LOWORD(wParam);
+	wmEvent = HIWORD(wParam);
+
+	/* 判断控件标识符和通知代码 */
+	if (wmId == XS_LOGIN && wmEvent == BN_CLICKED)
+	{
+		MessageBox(NULL, _T("登录按钮"), _T("tit"), MB_OK);
+	}
+
+	break;
+}
+```
 ####WM_LBUTTONDOWN
 按下鼠标左键，通过WindowProc函数接收该消息            
 ```cpp

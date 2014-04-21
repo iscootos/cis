@@ -40,3 +40,7 @@ WindowProc接收该消息，如果程序处理此消息，返回TRUE
 wParam 指定发送WM_DRAWITEM消息的控件标识符，如果消息由菜单发送，这个参数是零，否则非零        
 lParam 指向包含绘制信息的DRAWITEMSTRUCT 结构            
 
+####CB_ADDSTRING消息
+添加一个字符串到组合框            
+wParam 不使用            
+lParam 
