@@ -79,6 +79,7 @@
  - 16.17.[CDC类](16.17.md)
  - 16.18.[CBitmap类](16.18.md)
  - 16.19.[CDC类函数](16.19.md)
+ - 16.20.[CRect类函数](16.20.md)
 * 连接MySQL数据库
  - x.0.[boost库](x.0.md)
  - x.1.[MySQL Connector/C](x.1.md)
