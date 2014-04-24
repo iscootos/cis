@@ -88,6 +88,9 @@
  - 16.26.[MFC 自绘组合框](16.26.md)
  - 16.27.[CRegKey 类函数注册表操作](16.27.md)
  - 16.28.[CFile 类函数](16.28.md)
+ - 16.29.[SQLite 数据库](16.29.md)
+ - 16.30.[CString 类函数](16.30.md)
+ - 16.31.[Unicode CString转换 char类型](16.31.md)
 * 连接MySQL数据库
  - x.0.[boost库](x.0.md)
  - x.1.[MySQL Connector/C](x.1.md)
