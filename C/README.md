@@ -16,6 +16,8 @@
  - 1.7.[Makefile](1.7.md)
  - 1.8.[结束程序abort exit atexit _Exit quick_exit at_quikck_exit](1.8.md)
  - 1.9.[时间和日期](1.9.md)
+ - 1.10.[epoll函数](1.10.md)
+ - 1.11.[getaddrinfo函数](1.11.md)
 * 底层文件访问
  - 2.0.[底层文件访问](2.0.md)
  - 2.1.[write 系统调用](2.1.md)

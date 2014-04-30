@@ -91,6 +91,9 @@
  - 16.29.[SQLite 数据库](16.29.md)
  - 16.30.[CString 类函数](16.30.md)
  - 16.31.[Unicode CString转换 char类型](16.31.md)
+ - 16.32.[关于SDI自绘控件的问题与解决](16.32.md)
+ - 16.33.[修改对话框程序](16.33.md)
+ - 16.34.[CSocket类函数](16.34.md)
 * 连接MySQL数据库
  - x.0.[boost库](x.0.md)
  - x.1.[MySQL Connector/C](x.1.md)
