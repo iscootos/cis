@@ -65,6 +65,7 @@
  - 15.5.[自定义Windows程序图标,光标](15.5.md)
  - 15.6.[HBRUSH画刷](15.6.md)
  - 15.7.[LoadString](15.7.md)
+ - 15.8.[IOCP模型](15.8.md)
 * MFC编程
  - 16.0.[CWinApp类](16.0.md)
  - 16.1.[CFrameWnd类](16.1.md)
