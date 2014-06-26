@@ -1,6 +1,7 @@
 ###Linux C程序
 * 安装C
  - 0.1.[Windows下安装C语言编译器](0.1.md)
+ - 0.2.[基本数据类型int float](0.2.md)
  - 0.3.[string.h](0.3.md)
  - 0.4.[errno.h](0.4.md)
  - 0.5.[getopt.h](0.5.md)
