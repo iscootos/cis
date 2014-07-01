@@ -34,6 +34,9 @@ $IPTABLES -t filter -P INPUT $policy \
 ```
 前面有＋号的为添加的
 ```bash
+vi /etc/init.d/iptables
+```
+```bash
 security)
 $IPTABLES -t filter -P INPUT $policy \
 && $IPTABLES -t filter -P OUTPUT $policy \

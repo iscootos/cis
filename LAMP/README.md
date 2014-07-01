@@ -8,7 +8,6 @@
  - 0.6.[grep命令](0.6.md)
  - 0.7.[压缩解压命令](0.7.md)
  - 0.8.[mknod创建特殊文件、设备](0.8.md)
- - 0.9.[在重启 iptables 时，我遇到如下报错security raw nat mangle](0.9.md)
 * 1.LAMP环境的搭建
  - 1.1.[CentOS 6.4 LAMP环境](1.1.md)
  - 1.2.[LAMP](1.2.md)
@@ -46,3 +45,4 @@
  - x.11.[修改本地DNS](x.11.md)
  - x.12.[苹果验证服务器](x.12.md)
  - x.13.[Linux查看操作系统和内核版本](x.13.md)
+ - x.14.[在重启 iptables 时，我遇到如下报错security raw nat mangle](x.14.md)
