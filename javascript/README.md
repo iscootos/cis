@@ -1,3 +1,6 @@
+* HTML中的javascript应用
+ - 0.1.[如何在HTML中使用javascript](0.1.md)
+ - 0.2.[第一个javascript](0.2.md)
 * javascript基础
  - 1.1.[变量](1.1.md)
  - 1.2.[数组](1.2.md)
