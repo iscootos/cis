@@ -13,9 +13,9 @@
 (function() {
 	var aTag = [
 		'abbr', 'article', 'aside', 'audio', 'canvas', 'datalist', 'details',
-		'dialog', 'eventsource', 'figure', 'footer', 'header', 'hgroup',
-		'mark', 'menu', 'meter', 'nav', 'output', 'progress', 'section',
-		'time', 'video'
+		'dialog', 'eventsource', 'figcaption', 'figure', 'footer', 'header',
+		'hgroup', 'mark', 'menu', 'meter', 'nav', 'output', 'progress',
+		'section', 'time', 'video'
 	],
 		i = 0;
 	for (i in aTag) {
