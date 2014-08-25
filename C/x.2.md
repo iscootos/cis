@@ -215,3 +215,66 @@ free(out);
 ```text
 [[0, -1, 0], [1, 0, 0], [0, 0, 1]]
 ```
+下面我们用更复杂一些的方法使用数据结构把多个结构添加到数组
+```c
+struct record {
+	char* precision;
+	double lat;
+	double lon;
+	char* address;
+	char* city;
+	char* state;
+	char* zip;
+	char* country;
+};
+```
+```c
+cJSON *root, *thm, *fld;
+char* out;
+
+struct record fields[2]={
+		{"zip",37.7668,-1.223959e+2,"","SAN FRANCISCO","CA","94107","US"},
+		{"zip",37.371991,-1.22026e+2,"","SUNNYVALE","CA","94085","US"}};
+
+root=cJSON_CreateArray();
+int i;
+for (i=0;i<2;i++)
+{
+	cJSON_AddItemToArray(root,fld=cJSON_CreateObject());
+	cJSON_AddStringToObject(fld, "precision", fields[i].precision);
+	cJSON_AddNumberToObject(fld, "Latitude", fields[i].lat);
+	cJSON_AddNumberToObject(fld, "Longitude", fields[i].lon);
+	cJSON_AddStringToObject(fld, "Address", fields[i].address);
+	cJSON_AddStringToObject(fld, "City", fields[i].city);
+	cJSON_AddStringToObject(fld, "State", fields[i].state);
+	cJSON_AddStringToObject(fld, "Zip", fields[i].zip);
+	cJSON_AddStringToObject(fld, "Country", fields[i].country);
+}
+
+out = cJSON_Print(root);
+cJSON_Delete(root);
+printf("%s\n", out);
+free(out);
+```
+输出
+```text
+[{
+		"precision":	"zip",
+		"Latitude":	37.766800,
+		"Longitude":	-122.395900,
+		"Address":	"",
+		"City":	"SAN FRANCISCO",
+		"State":	"CA",
+		"Zip":	"94107",
+		"Country":	"US"
+	}, {
+		"precision":	"zip",
+		"Latitude":	37.371991,
+		"Longitude":	-122.026000,
+		"Address":	"",
+		"City":	"SUNNYVALE",
+		"State":	"CA",
+		"Zip":	"94085",
+		"Country":	"US"
+	}]
+```
