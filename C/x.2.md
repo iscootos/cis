@@ -118,3 +118,100 @@ blue
 yellow
 white
 ```
+`cJSON_CreateObject()`函数， 返回一个cJSON结构的指针，用于创建一个新的cJSON结构，可以用于创建根对象，也可以用于创建子对象
+```c
+extern cJSON *cJSON_CreateObject(void);
+```
+`cJSON_AddItemToObject()`函数，把一个key-value键值对添加到JSON数据中，cJSON中，添加的所有的数据，最后都是调用该函数实现的
+```c
+extern void	cJSON_AddItemToObject(cJSON *object,const char *string,cJSON *item);
+```
+添加几种数据格式的宏，可以发现都是调用的`cJSON_AddItemToObject()`函数实现的
+```c
+#define cJSON_AddNullToObject(object,name)		cJSON_AddItemToObject(object, name, cJSON_CreateNull())
+#define cJSON_AddTrueToObject(object,name)		cJSON_AddItemToObject(object, name, cJSON_CreateTrue())
+#define cJSON_AddFalseToObject(object,name)		cJSON_AddItemToObject(object, name, cJSON_CreateFalse())
+#define cJSON_AddBoolToObject(object,name,b)	cJSON_AddItemToObject(object, name, cJSON_CreateBool(b))
+#define cJSON_AddNumberToObject(object,name,n)	cJSON_AddItemToObject(object, name, cJSON_CreateNumber(n))
+#define cJSON_AddStringToObject(object,name,s)	cJSON_AddItemToObject(object, name, cJSON_CreateString(s))
+```
+同时，如上我们发现，所有的数据都是调用对应的函数实现了创建cJSON的value对象
+```c
+extern cJSON *cJSON_CreateNull(void);
+extern cJSON *cJSON_CreateTrue(void);
+extern cJSON *cJSON_CreateFalse(void);
+extern cJSON *cJSON_CreateBool(int b);
+extern cJSON *cJSON_CreateNumber(double num);
+extern cJSON *cJSON_CreateString(const char *string);
+extern cJSON *cJSON_CreateArray(void);
+extern cJSON *cJSON_CreateObject(void);
+```
+下面，我们来写一个实例
+```c
+cJSON *root, *fmt;
+char* out;
+
+root = cJSON_CreateObject();
+cJSON_AddItemToObject(root, "name", cJSON_CreateString("Jack"));
+cJSON_AddItemToObject(root, "format", fmt = cJSON_CreateObject());
+cJSON_AddStringToObject(fmt, "type", "rect");
+cJSON_AddNumberToObject(fmt, "height", 1920);
+cJSON_AddNumberToObject(fmt, "width", 1080);
+cJSON_AddFalseToObject(fmt, "interlace");
+out = cJSON_Print(root);
+cJSON_Delete(root);
+printf("%s\n", out);
+free(out);
+```
+输出
+```text
+{
+	"name":	"Jack",
+	"format":	{
+		"type":	"rect",
+		"height":	1920,
+		"width":	1080,
+		"interlace":	false
+	}
+}
+```
+创建数组对象
+```c
+extern cJSON *cJSON_CreateIntArray(const int *numbers,int count);
+extern cJSON *cJSON_CreateFloatArray(const float *numbers,int count);
+extern cJSON *cJSON_CreateDoubleArray(const double *numbers,int count);
+extern cJSON *cJSON_CreateStringArray(const char **strings,int count);
+```
+下面，我们来实现一下
+```c
+cJSON *root;
+char* out;
+
+const char *strings[] = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+root = cJSON_CreateStringArray(strings, 7);
+out = cJSON_Print(root);
+cJSON_Delete(root);
+printf("%s\n", out);
+free(out);
+```
+```text
+["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+```
+如果是二维数组
+```c
+cJSON *root;
+char* out;
+
+int numbers[3][3] = {{0,-1,0},{1,0,0},{0,0,1}};
+root = cJSON_CreateArray();
+int i;
+for (i = 0; i < 3; i++)
+	cJSON_AddItemToArray(root, cJSON_CreateIntArray(numbers[i], 3));
+out = cJSON_Print(root);
+cJSON_Delete(root);
+printf("%s\n", out);
+free(out);
+```
+```text
+[[0, -1, 0], [1, 0, 0], [0, 0, 1]]
+```
