@@ -14,6 +14,13 @@ value值的类型包括`string`，`number`，`object`，`array`，`true`，`fals
 "{\"colors\":[\"red\",\"green\",\"blue\",\"yellow\",\"white\"]}"
 ```
 ####cJSON库
+注: cJSON库使用了`math.h`数学库函数，在`libm.so`库文件中，所以编译的时候需要加上`-lm`，否则提示如下信息
+```text
+In function `parse_number':
+undefined reference to `pow'
+In function `print_number':
+undefined reference to `floor'
+```
 cJSON是纯C语言写的用于解析JSON语句的库，只有两个文件`cJSON.h`、`cJSON.c`           
 JSON数据格式和结构定义都在`cJSON.h`,分别对应JSON的七种数据格式
 ```c
