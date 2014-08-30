@@ -95,3 +95,48 @@ MYSQL *		STDCALL mysql_real_connect(MYSQL *mysql, const char *host,
 `unsigned int port`端口，通常3306         
 `const char *unix_socket`连接类型，值NULL，表示通过host字段，自动判断,如果是本地的，也可以输入类似`/tmp/mysql.sock`              
 `unsigned long clientflag`值通常为0               
+####mysql_real_query
+该函数用于执行SQL查询语句，查询成功返回0，失败返回非0
+```c
+int		STDCALL mysql_real_query(MYSQL *mysql, const char *q,
+					unsigned long length);
+```
+`MYSQL *mysql`就是`mysql_real_connect()`函数连接成功的结构指针                    
+`const char *q`SQL语句                    
+`unsigned long length`SQL语句长度           
+####MYSQL_RES
+该结构用于保存SQL查询结果
+```c
+typedef struct st_mysql_res {
+  my_ulonglong  row_count;
+  MYSQL_FIELD	*fields;
+  MYSQL_DATA	*data;
+  MYSQL_ROWS	*data_cursor;
+  unsigned long *lengths;		/* column lengths of current row */
+  MYSQL		*handle;		/* for unbuffered reads */
+  const struct st_mysql_methods *methods;
+  MYSQL_ROW	row;			/* If unbuffered read */
+  MYSQL_ROW	current_row;		/* buffer to current row */
+  MEM_ROOT	field_alloc;
+  unsigned int	field_count, current_field;
+  my_bool	eof;			/* Used by mysql_fetch_row */
+  /* mysql_stmt_close() had to cancel this result */
+  my_bool       unbuffered_fetch_cancelled;  
+  void *extension;
+} MYSQL_RES;
+```
+####mysql_store_result
+该函数返回查询SQL的结果集，成功返回MYSQL_RES指针，失败返回NULL
+```c
+MYSQL_RES *     STDCALL mysql_store_result(MYSQL *mysql);
+```
+该函数用于，从服务器获得查询返回的所有行，并将他们存储在客户端，保存在动态申请的MYSQL_RES数据结构中，返回该结构的指针  
+####mysql_fetch_row
+该函数是从MYSQL_RES结果集中，提取一行数据，如果返回NULL,表示数据提取完了
+```c
+MYSQL_ROW	STDCALL mysql_fetch_row(MYSQL_RES *result);
+```
+首先我们来看下`MYSQL_ROW`的定义，很明显就是一个指针的指针，也就是字符串数组
+```c
+typedef char **MYSQL_ROW;
+```
