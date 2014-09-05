@@ -18,6 +18,8 @@
  - 2.7.[变量函数](2.7.md)
  - 2.8.[Session函数](2.8.md)
  - 2.9.[PHP内置变量](2.9.md)
+ - 2.10.[来自 PHP 之外的变量](2.10.md)
+ - 2.11.[cookie](2.11.md)
 * 第3章 PHP MySQL
  - 3.1.[php mysql函数](3.1.md)
  - 3.3.[php pdo MySQL封装库](3.3.md)
