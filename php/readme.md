@@ -14,6 +14,7 @@
  - 2.3.[JSON函数](2.3.md)
  - 2.4.[PDO类](2.4.md)
  - 2.5.[Number函数](2.5.md)
+ - 2.6.[Array函数](2.6.md)
 * 第3章 PHP MySQL
  - 3.1.[php mysql函数](3.1.md)
  - 3.3.[php pdo MySQL封装库](3.3.md)
