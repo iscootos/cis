@@ -9,8 +9,6 @@
  - 1.8.[样式](1.8.md)
  - 1.9.[链接](1.9.md)
  - 1.x.[表单](1.x.md)
-
- - 1.9.[web font](1.9.md)
 * 2、CSS
  - 2.1.[CSS样式表](2.1.md)
  - 2.2.[CSS sprites](2.2.md)
@@ -20,4 +18,3 @@
  - x.1.[Adobe Dreamweaver CS6入门](x.1.md)
  - x.2.[公共CDN库](x.2.md)
  - x.3.[photoshop c6快捷键](x.3.md)
- - x.4.[URL 编码](x.4.md)
