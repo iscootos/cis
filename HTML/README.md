@@ -16,8 +16,8 @@
  - 1.15.[背景](1.15.md)
 * 2、CSS
  - 2.1.[CSS样式表](2.1.md)
- - 2.2.[CSS sprites](2.2.md)
- - 2.3.[CSS 高级应用](2.3.md)
+ - 2.2.[CSS背景](2.2.md)
+ - 2.3.[CSS文本](2.3.md)
  - 2.4.[clearfix清除浮动闭合容器之:after与:before](2.4.md)
 * 相关工具
  - x.1.[Adobe Dreamweaver CS6入门](x.1.md)
