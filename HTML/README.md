@@ -23,6 +23,7 @@
  - 2.6.[CSS表格](2.6.md)
  - 2.7.[CSS轮廓](2.7.md)
  - 2.8.[CSS框模型](2.8.md)
+ - 2.9.[CSS定位](2.9.md)
 * 相关工具
  - x.1.[Adobe Dreamweaver CS6入门](x.1.md)
  - x.2.[公共CDN库](x.2.md)
