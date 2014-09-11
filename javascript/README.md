@@ -38,3 +38,4 @@
  - x.1.[JS库](x.1.md)
  - x.2.[IE兼容html5](x.2.md)
  - x.3.[随机生成MAC地址](x.3.md)
+ - x.4.[让IE支持getElementsByClassName](x.4.md)
