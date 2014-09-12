@@ -4,7 +4,7 @@
 document.getElementById('btn').onclick=myclick();
 ```
 以上代码，当我们点击id为btn的元素时，执行myclick函数         
-但是上面的代码也有一些缺陷，例如不能复用                   
+但是如果我们想在同一个元素里面添加多个同样的事件，那么最后的事件会覆盖掉之前的事件                              
 ####addEventListener()
 addEventListener()方法可以向指定HTML元素添加事件句柄           
 ```text

@@ -40,3 +40,5 @@
  - x.3.[随机生成MAC地址](x.3.md)
  - x.4.[让IE支持getElementsByClassName](x.4.md)
  - x.5.[指定元素添加删除事件](x.5.md)
+ - x.6.[获取元素的节点](x.6.md)
+ - x.7.[常用自写函数](x.7.md)
