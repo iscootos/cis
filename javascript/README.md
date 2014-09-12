@@ -39,3 +39,4 @@
  - x.2.[IE兼容html5](x.2.md)
  - x.3.[随机生成MAC地址](x.3.md)
  - x.4.[让IE支持getElementsByClassName](x.4.md)
+ - x.5.[指定元素添加删除事件](x.5.md)
