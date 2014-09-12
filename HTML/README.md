@@ -32,8 +32,15 @@
  - 2.15.[CSS图像透明度](2.15.md)
  - 2.16.[字体](2.16.md)
  - 2.17.[单位](2.17.md)
-* 3、XHTML
+ - 2.18.[CSS显示与隐藏](2.18.md)
+* 3、HTML DOM
  - 3.1.[XHTML语法](3.1.md)
+ - 3.2.[HTML DOM节点](3.2.md)
+ - 3.3.[HTML DOM方法](3.3.md)
+ - 3.4.[HTML DOM属性](3.4.md)
+ - 3.5.[HTML DOM访问](3.5.md)
+ - 3.6.[HTML DOM修改](3.6.md)
+ - 3.7.[HTML DOM元素](3.7.md)
 * 相关工具
  - x.1.[Adobe Dreamweaver CS6入门](x.1.md)
  - x.2.[公共CDN库](x.2.md)
