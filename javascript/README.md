@@ -34,10 +34,15 @@
  - 7.0.[jQuery](7.0.md)
  - 7.1.[jQuery选择器](7.1.md)
  - 7.2.[jQuery事件](7.2.md)
- - 7.7.[jQuery 解析JSON数据](7.7.md)
+ - 7.3.[jQuery表单](7.3.md)
+ - 7.4.[jQueryCSS](7.4.md)
+ - 7.5.[jQuery Ajax](7.5.md)
+ - 7.7.[jQuery解析JSON数据](7.7.md)
 * Node.js
  - 8.1.[下载安装Node.js](8.1.md)
  - 8.2.[一个基础的HTTP服务器](8.2.md)
+* JS
+ - 9.1.[JS](9.1.md)
 * JS库
  - x.1.[JS库](x.1.md)
  - x.2.[IE兼容html5](x.2.md)
