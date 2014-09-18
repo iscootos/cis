@@ -46,7 +46,7 @@ document.cookie = 'user=allen; expires=' + cookieTime(1000) + '; domain=.test.co
 ```
 因为cookie只支持一次添加一个cookie值，所以我写了一个函数，参数是一个对象，这样就实现了一次添加多个cookie值的方法        
 ```js
-function cookie(o)
+function setCookie(o)
 {
 	if (typeof o != 'object')
 		return;
@@ -55,4 +55,41 @@ function cookie(o)
 	}
 }
 ```
+当我们使用这个函数后，输出的字符串为
+```js
+setCookie({"name":"allen","age":27});
+alert(document.cookie);
+```
+```text
+name=allen; age=27
+```
+如果我们要取出cookie中的一个值的话，那么使用下面的函数           
+document.cookie.length检查cookie的长度大于0               
+document.cookie.indexOf检查要获取的属性是否存在，不存在返回-1            
+document.cookie.substring从cookie字符串中提取值        
+```js
+function getCookie(d)
+{
+	var start, end;
+	if (0 < document.cookie.length) {
+		var c = d + '=';
+		start = document.cookie.indexOf(c);
+		if (-1 < start) {
+			start += c.length;
+			end = document.cookie.indexOf(';', start);
+			if (0 > end) {
+				end = document.cookie.length;
+			}
+			return unescape(document.cookie.substring(start, end));
+		}
+	}
+	return null;
+}
+```
+例如我们先创建一个cookie,再获取它的值
+```js
+setCookie({"name":"allen","age":27});
+alert(getCookie("age"));
+```
+
 
