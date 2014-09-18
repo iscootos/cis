@@ -1,43 +1,48 @@
-#对象与数组的高级应用关联数组
+#对象与数组的高级应用
 创建对象的简单方法，对象直接量
 ```js
-var obj = {};
-var obj = {name: 'max'};
-var obj = {name: {}, text: []};
+var o = {};
 ```
-也可以使用new操作符后跟构造函数，所以
+构造函数创建对象
 ```js
-var a = new Array();
-var d = new Date();
-var r = new RegExp('javascript', 'i');
 var o = new Object();
 ```
-以下全部返回function，Object是Function的实例，Function是特殊的对象，也是Object的实例 
+创建对象的时候，一般都推荐使用var声明来创建对象，以免创建的对象为全局对象，但是创建对象属性的时候，就不需要var声明了，如果使用了，反而会提示错误
 ```js
-typeof Array  //返回function
-typeof Object  //返回function
-typeof Date  //返回function
-typeof RegExp  //返回function
+var o = {};
+o.name = "allen";
 ```
-对象属性使用.符号来存取属性的值            
-同时也可以使用[]，里面使用属性名(可使用变量，这点特别有用)       
 ```js
-var t = {};
-t.text = 'hello';
-t.o = {};
-t.o.name = 'rd';
-t.n = [];
-
-var t = {
-	"text": "hello"
-};
-
-alert(t.text);
+var o = {"name":"allen","age":27};
 ```
-通常使用关键字`var`来声明变量，但是声明对象属性时，不能使用`var`声明       
-下面我们就给window创建了一个属性            
+除了上面两种创建对象的属性的方法，还可以采用数组式的方式来创建对象，这在实际编程中非常有用
 ```js
-window['o'] = 'hello world';
-alert(window.o);
+var o = {};
+o["name"] = "allen";
 ```
-那么从上面我们可以看出，我们可以像创建数组一样来创建对象的属性和方法
+访问对象属性的时候，同样可以使用两种方式，它们的结果都是一样的
+```js
+document.write(o.name);
+document.write(o[name]);
+####遍历对象的属性
+遍历对象的属性可以使用for...in，来循环获取对象的所有属性名称
+```js
+var o = {"name":"allen","age":27};
+for (var i in o) {
+	document.write(o[i]);
+}
+```
+```text
+allen27
+```
+####遍历数组的值
+遍历数组使用for...in的话，获取到的是数组的下标，然后再通过下标来获取到值
+```js
+var o = ["name","age"];
+for (var i in o) {
+	document.write(o[i]);
+}
+```
+```text
+nameage
+```
