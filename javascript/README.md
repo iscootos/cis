@@ -24,6 +24,10 @@
  - 2.4.[创建新Document对象](2.4.md)
  - 2.5.[动态添加对象](2.5.md)
  - 2.6.[浏览器](2.6.md)
+* DOM
+ - 3.1.[document对象](3.1.md)
+ - 3.2.[elment对象](3.2.md)
+ - 3.3.[style对象](3.3.md)
 * AJAX
  - 6.0.[AJAX](6.0.md)
  - 6.1.[AJAX-jQuery的load()方法](6.1.md)
