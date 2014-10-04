@@ -93,3 +93,4 @@
  - x.3.[MYSQL C API Documentation](x.3.md)
  - x.4.[冒泡排序算法](x.4.md)
  - x.5.[快速排序算法](x.5.md)
+ - x.6.[C语言打印二进制代码](x.6.md)
