@@ -53,12 +53,13 @@ void strsort(char *src, int len)
     }
 }
 ```
+第一轮，找对最小的值，放到第一位,第二轮，从第二个开始，找到最小的值，放到第二位，依次到最后最后一位，就实现了，从小到大的排序
 ```c
 void strsort(char *src, int len)
 {
     char* tmp = src;
     int i, j;
-    for (i = 0; i < len; i++) {
+    for (i = 0; i < len - 1; i++) {
         for (j = i + 1; j < len; j++) {
             if (tmp[i] > tmp[j]) {
                 tmp[i]  ^= tmp[j];
