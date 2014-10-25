@@ -53,6 +53,22 @@ void strsort(char *src, int len)
     }
 }
 ```
+```c
+void strsort(char *src, int len)
+{
+    char* tmp = src;
+    int i, j;
+    for (i = 0; i < len; i++) {
+        for (j = i + 1; j < len; j++) {
+            if (tmp[i] > tmp[j]) {
+                tmp[i]  ^= tmp[j];
+                tmp[j]  ^= tmp[i];
+                tmp[i]  ^= tmp[j];
+            }
+        }
+    }
+}
+```
 示例
 ```c
 #include <stdio.h>
