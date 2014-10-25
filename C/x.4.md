@@ -17,16 +17,15 @@ void xsort(int *a, int len)
     int *d = a;
     int *now = NULL;
     int *next = NULL;
-    int tmp = 0;
     int i, j;
     for (i = 0; i < len; i++) {
         for (j = 0; j < len -i; j++) {
             now = d + j;
             next = d + j + 1;
             if (*now > *next) {
-                tmp = *now;
-                *now = *next;
-                *next = tmp;
+                *now  ^= *next;
+                *next ^= *now;
+                *now  ^= *next;
             }
         }
     }
@@ -38,7 +37,6 @@ void strsort(char *src, int len)
 {
     len -= 1;
     char* s = src;
-    char tmp = 0;
     char* now = NULL;
     char* next = NULL;
     int i, j;
@@ -47,9 +45,9 @@ void strsort(char *src, int len)
             now = s + j;
             next = s + j + 1;
             if (*now > *next) {
-                tmp = *now;
-                *now = *next;
-                *next = tmp;
+                *now  ^= *next;
+                *next ^= *now;
+                *now  ^= *next;
             }
         }
     }
@@ -84,16 +82,15 @@ void xsort(int *a, int len)
     int *d = a;
     int *now = NULL;
     int *next = NULL;
-    int tmp = 0;
     int i, j;
     for (i = 0; i < len; i++) {
         for (j = 0; j < len -i; j++) {
             now = d + j;
             next = d + j + 1;
             if (*now > *next) {
-                tmp = *now;
-                *now = *next;
-                *next = tmp;
+                *now  ^= *next;
+                *next ^= *now;
+                *now  ^= *next;
             }
         }
     }
@@ -120,7 +117,6 @@ void strsort(char *src, int len)
 {
     len -= 1;
     char* s = src;
-    char tmp = 0;
     char* now = NULL;
     char* next = NULL;
     int i, j;
@@ -129,9 +125,9 @@ void strsort(char *src, int len)
             now = s + j;
             next = s + j + 1;
             if (*now > *next) {
-                tmp = *now;
-                *now = *next;
-                *next = tmp;
+                *now  ^= *next;
+                *next ^= *now;
+                *now  ^= *next;
             }
         }
     }
