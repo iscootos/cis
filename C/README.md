@@ -29,7 +29,7 @@
  - 1.11.[getaddrinfo函数](1.11.md)
 * I/O
  - 2.0.[read/write函数](2.0.md)
- - 2.1.[write 系统调用](2.1.md)
+ - 2.1.[readv/writev函数](2.1.md)
  - 2.2.[read 系统调用](2.2.md)
  - 2.3.[open 系统调用](2.3.md)
  - 2.4.[close 系统调用](2.4.md)
