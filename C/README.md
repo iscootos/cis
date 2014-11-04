@@ -30,9 +30,9 @@
 * I/O
  - 2.0.[read/write函数](2.0.md)
  - 2.1.[readv/writev函数](2.1.md)
- - 2.2.[read 系统调用](2.2.md)
- - 2.3.[open 系统调用](2.3.md)
- - 2.4.[close 系统调用](2.4.md)
+ - 2.2.[send/recv函数](2.2.md)
+ - 2.3.[sendto/recvfrom函数](2.3.md)
+ - 2.4.[sendmsg/recvmsg函数](2.4.md)
  - 2.5.[ioctl 系统调用](2.5.md)
  - 2.6.[其他与文件管理有关的系统调用](2.6.md)
  - 2.7.[标准I/O库](2.7.md)
