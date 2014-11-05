@@ -89,18 +89,14 @@ vi /etc/selinux/config
 #SELINUXTYPE=targeted   #注释掉
 SELINUX=disabled        #增加
 ```
-```bash
-:wq!                    #保存退出
-```
-链接不上SSH的话，关闭SELinux就可以了    
-       
-又是TM的SELinux惹的祸，关闭SELinux解决问题：         
-暂时关闭（重启后恢复）：        
+上面我们虽然关闭了SElinux但是重启电脑后才会生效，所以我们需要先执行下面的命令，该命令是临时关闭SElinux重启后恢复    
 ```bash
 setenforce 0
 ```
-关闭SELINUX，并且不需要重启电脑的SHELL命令
+把如上的命令，通过SHELL语句实现
 ```bash
+#!/bin/sh
+
 setenforce 0
 echo -e "#SELINUX=enforcing\n#SELINUXTYPE=targeted\nSELINUX=disabled\nSETLOCALDEFS=0" > /etc/selinux/config
 ```
