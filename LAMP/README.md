@@ -34,6 +34,9 @@
 * FreeBSD
  - 5.1.[FreeBSD安装](5.1.md)
  - 5.2.[FreeBSD设置SSH](5.2.md)
+* CentOS
+ - 6.1.[CentOS 6.5](6.1.md)
+ - 6.2.[CentOS 7.0](6.2.md)
 * 常见问题
  - x.1.[Vmware克隆一个centos系统但网卡不能用的问题](x.1.md)
  - x.2.[修改SSH端口_免密码证书登录](x.2.md)
