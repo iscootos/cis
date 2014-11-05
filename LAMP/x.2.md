@@ -61,8 +61,11 @@ mkdir -pv /root/.ssh
 touch ~/.ssh/authorized_keys
 vi ~/.ssh/authorized_keys
 ```
-一些出错信息：
+####出错信息
 ```bash
+/etc/init.d/sshd restart
+```
+```text
 [root@li414-184 ~]# /etc/init.d/sshd restart
 Stopping sshd:                                             [  OK  ]
 cat: /proc/sys/crypto/fips_enabled: No such file or directory
@@ -72,7 +75,7 @@ Starting sshd:                                             [  OK  ]
 ```bash
 vi /etc/init.d/sshd
 ```
-找到地50行:    
+第50行  
 ```bash
 if [ ! -s $RSA1_KEY -a `cat /proc/sys/crypto/fips_enabled` -eq 0 ]; then
 ```
@@ -100,6 +103,7 @@ setenforce 0
 setenforce 0
 echo -e "#SELINUX=enforcing\n#SELINUXTYPE=targeted\nSELINUX=disabled\nSETLOCALDEFS=0" > /etc/selinux/config
 ```
+####iptables错误
 在重启 iptables 时，我遇到如下报错：
 ```bash
 /etc/init.d/iptables restart
@@ -152,7 +156,7 @@ $IPTABLES -t filter -P INPUT $policy \
 ```bash
 service iptables restart
 ```
-```bash
+```text
 [root@localhost ~]# service iptables restart
 iptables: Flushing firewall rules:                         [  OK  ]
 iptables: Setting chains to policy ACCEPT: security raw nat[  OK  ]filter
