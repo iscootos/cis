@@ -53,3 +53,4 @@
  - x.12.[苹果验证服务器](x.12.md)
  - x.13.[Linux查看操作系统和内核版本](x.13.md)
  - x.14.[在重启 iptables 时，我遇到如下报错security raw nat mangle](x.14.md)
+ - x.15.[cat EOF](x.15.md)
