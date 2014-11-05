@@ -8,11 +8,11 @@ passwd username                       //设置用户密码
 vi /etc/ssh/sshd_config
 ```
 ```bash
-#Port 22                        //第13行  修改为Port 2222 指定SSH连接的端口号，不建议使用默认22端口
+#Port 22                        //第13行  取消注释，修改为Port 2222 指定SSH连接的端口号，不建议使用默认22端口
 Protocol 2                      //第21行  2,1允许SSH1和SSH2连接，建议设置成 Protocal 2
-#PermitRootLogin yes            //第42行  允许root登录
-#PermitEmptyPasswords no        //第65行    不允许空密码登录
-PasswordAuthentication yes  //第66行  改为 PasswordAuthentication no   取消密码认证登录
+#PermitRootLogin yes            //第42行  添加注释，允许root登录
+#PermitEmptyPasswords no        //第65行  添加注释，不允许空密码登录
+PasswordAuthentication yes      //第66行  取消注释，改为 PasswordAuthentication no   取消密码认证登录
 ```
 重启SSH
 ```bash
@@ -80,7 +80,7 @@ if [ ! -s $RSA1_KEY -a `cat /proc/sys/crypto/fips_enabled` -eq 0 ]; then
 ```bash
 if [ ! -s "$RSA1_KEY" -a "'sysctl -n -e crypto.fips_enables'" = 0 ]; then
 ```
-关闭SELINUX   
+####关闭SELINUX   
 ```bash
 vi /etc/selinux/config
 ```
@@ -98,6 +98,11 @@ SELINUX=disabled        #增加
 暂时关闭（重启后恢复）：        
 ```bash
 setenforce 0
+```
+关闭SELINUX，并且不需要重启电脑的SHELL命令
+```bash
+setenforce 0
+echo -e "#SELINUX=enforcing\n#SELINUXTYPE=targeted\nSELINUX=disabled\nSETLOCALDEFS=0" > /etc/selinux/config
 ```
 在重启 iptables 时，我遇到如下报错：
 ```bash
@@ -146,9 +151,11 @@ $IPTABLES -t filter -P INPUT $policy \
 || let ret+=1
 ;;
 ```
-然后保存退出
-
+然后保存退出          
 重启 iptables 服务：
+```bash
+service iptables restart
+```
 ```bash
 [root@localhost ~]# service iptables restart
 iptables: Flushing firewall rules:                         [  OK  ]
