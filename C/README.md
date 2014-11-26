@@ -16,6 +16,8 @@
  - 0.14.[C99](0.14.md)
  - 0.15.[进制](0.15.md)
 * 基础知识
+ - 1.0.[makefile](1.0.md)
+ - 1.1.[使用automake/autoconf生成makefile](1.1.md)
  - 1.5.[捕获错误](1.5.md)
  - 1.6.[日志syslog](1.6.md)
  - 1.7.[Makefile](1.7.md)
