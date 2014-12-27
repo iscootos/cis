@@ -39,6 +39,8 @@
  - 2.10.[守护进程](2.10.md)
  - 2.11.[管道](2.11.md)
  - 2.12.[FIFO](2.12.md)
+ - 2.13.[seteuid/geteuid/setuid/getuid函数](2.13.md)
+ - 2.14.[ioctl函数](2.14.md)
 * 文件
  - 3.0.[open/creat/close函数](3.0.md)
  - 3.1.[fopen/freopen/fdopen函数](3.1.md)
