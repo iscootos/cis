@@ -8,6 +8,8 @@
  - 0.6.[grep命令](0.6.md)
  - 0.7.[压缩解压命令](0.7.md)
  - 0.8.[mknod创建特殊文件、设备](0.8.md)
+ - 0.9.[IP地址/子网掩码/网关](0.9.md)
+ - 0.10.[route命令](0.10.md)
 * 1.LAMP环境的搭建
  - 1.0.[设置CentOS环境变量](1.0.md)
  - 1.1.[CentOS 6.4 LAMP环境](1.1.md)
@@ -43,7 +45,6 @@
  - x.2.[修改SSH端口_免密码证书登录](x.2.md)
  - x.3.[用VMware Workstation打开ChromeOS-Vanilla镜像，提示no networks are available](x.3.md)
  - x.4.[Centos下系统时间和时区的修改和设置](x.4.md)
- - x.5.[apache 绑定多个域名指定不同目录](x.5.md)
  - x.6.[MySQL 数据库备份和恢复](x.6.md)
  - x.7.[centos 单网卡 多IP](x.7.md)
  - x.8.[mod_auth_mysql](x.8.md)
