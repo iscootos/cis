@@ -26,6 +26,7 @@
  - 1.10.[epoll函数](1.10.md)
  - 1.11.[getaddrinfo函数](1.11.md)
  - 1.12.[字符串函数](1.12.md)
+ - 1.13.[utsname](1.13.md)
 * I/O
  - 2.0.[read/write函数](2.0.md)
  - 2.1.[readv/writev函数](2.1.md)
