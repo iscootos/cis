@@ -54,3 +54,17 @@ iptables: Setting chains to policy ACCEPT: security raw nat[  OK  ]filter
 iptables: Unloading modules:                               [  OK  ]
 iptables: Applying firewall rules:                         [  OK  ]
 ```
+shell脚本，修复该问题
+```sh
+#!/bin/sh
+
+#/i 表示在raw)前一行添加 /a 表示后一行
+sed -i '/raw)/i    security)' /etc/init.d/iptables
+sed -i '/raw)/i    $IPTABLES -t filter -P INPUT $policy\\' /etc/init.d/iptables
+sed -i '/raw)/i        && $IPTABLES -t filter -P OUTPUT $policy\\' /etc/init.d/iptables
+sed -i '/raw)/i        && $IPTABLES -t filter -P FORWARD $policy\\' /etc/init.d/iptables
+sed -i '/raw)/i        || let ret+=1' /etc/init.d/iptables
+sed -i '/raw)/i    ;;' /etc/init.d/iptables
+
+service iptables restart
+```
