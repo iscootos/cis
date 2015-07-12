@@ -9,53 +9,74 @@
 
 
 ```c
-#include <stdio.h>
-
-int a[101], n;
-
-void quicksort(int left, int right)
+/*
+ * C.A.R.Hoare 快速排序
+ */
+void hoare_quicksort(int *array, int left, int right)
 {
-	int i, j, t, temp;
-	if (left > right)
+	int i, j, t;
+
+	if (left >= right)
 		return;
 
-	temp = a[left];  //temp中存的就是基准数
+	t = array[left];  //基准数
 	i = left;
 	j = right;
-	while ( i != j ) {
+
+	while (i < j) {
 		//顺序很重要，要先从右往左找
-		while (a[j] >= temp && i < j)
+		while (array[j] >= t && i < j)
 			j--;
 		//再从左往右找
-		while (a[i] <= temp && i < j)
+		while (array[i] <= t && i < j)
 			i++;
 		//交换两个数在数组中的位置
 		if (i < j) {  //当哨兵i和哨兵j没有相遇时
-			t = a[i];
-			a[i] = a[j];
-			a[j] = t;
+			array[i] ^= array[j];
+			array[j] ^= array[i];
+			array[i] ^= array[j];
 		}
 	}
 
-	a[left] = a[i];
-	a[i] = temp;
+	array[left] = array[i];
+	array[i] = t;
 
-	quicksort(left, i - 1);  //继续处理左边的，这里是一个递归的过程
-	quicksort(i + 1, right);  //继续处理右边的，这里是一个递归的过程
+	hoare_quicksort(array, left, i - 1);  //继续处理左边的，这里是一个递归的过程
+	hoare_quicksort(array, i + 1, right);  //继续处理右边的，这里是一个递归的过程
 }
-
-int main(int argc, char const *argv[])
+```
+```c
+/*
+ * N.Lomuto 快速排序
+ */
+void lomuto_quicksort(int *array, int left, int right)
 {
-	int i, j;
-	scanf("%d", &n);
-	for (i = 1; i <= n; i++)
-		scanf("%d", &a[i]);
+	int i, j, t;
 
-	quicksort(1, n);
+	if (left >= right)
+		return;
 
-	for (i = 1; i <=n ; i++)
-		printf("%d ", a[i]);
+	t = array[right];  //基准数
+	i = left;
 
-	return 0;
+	//哨兵j先从左往右走
+	for (j = left; j < right; j++) {
+		//直到遇到小于等于基准数的位置停下，交换哨兵i和哨兵j的值，然后哨兵i走到下一步
+		if (array[j] <= t && i < j) {
+			array[i] ^= array[j];
+			array[j] ^= array[i];
+			array[i] ^= array[j];
+			i++;
+		}
+	}
+	
+	if (array[i] > t) {
+		array[right] = array[i];
+		array[i] = t;
+		lomuto_quicksort(array, left, i - 1);
+		lomuto_quicksort(array, i + 1, right);
+	} else {
+		lomuto_quicksort(array, left, i);
+	}
 }
 ```
