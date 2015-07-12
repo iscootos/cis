@@ -22,7 +22,7 @@ void quicksort(int left, int right)
 	temp = a[left];  //temp中存的就是基准数
 	i = left;
 	j = right;
-	while ( i != j) {
+	while ( i != j ) {
 		//顺序很重要，要先从右往左找
 		while (a[j] >= temp && i < j)
 			j--;
