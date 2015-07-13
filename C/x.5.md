@@ -69,14 +69,15 @@ void lomuto_quicksort(int *array, int left, int right)
 			i++;
 		}
 	}
-	
+
 	if (array[i] > t) {
 		array[right] = array[i];
 		array[i] = t;
-		lomuto_quicksort(array, left, i - 1);
-		lomuto_quicksort(array, i + 1, right);
 	} else {
-		lomuto_quicksort(array, left, i);
+		i++;
 	}
+
+	lomuto_quicksort(array, left, i - 1);
+	lomuto_quicksort(array, i + 1, right);
 }
 ```
